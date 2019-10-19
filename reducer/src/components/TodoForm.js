@@ -1,29 +1,47 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
+import Header from './Header';
+import './Todo.css'
 
-function TodoForm(props) {
-    const [state, setState] = useState('');
+function TodoForm({ dispatch }) {
+  const [formValue, setFormValue] = useState('')
 
   const handleChange = (e) => {
-    setState(e.target.value);
-    }
-  
+    setFormValue(e.target.value);
+  }
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    props.addItem(e, state.value)
-    
-  
-    return (        
+    e.preventDefault()
+    if (formValue !== '') {
+      dispatch({ type: 'ADD_TODO', payload: formValue.toUpperCase() })
+      setFormValue('')
+    }
+  }
+
+  return (
+    <>
+     <Header />  
       <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          value={state.value}
-          onChange={handleChange}
-        />
-        <button>Add Todo</button>
+         
+        <input 
+        name="task"
+        value={formValue}
+        placeholder='   Add Todo...'
+        onChange={handleChange}
+        />      
+        <div>
+          <button className='submit' type='submit'>
+            Submit
+          </button>
+          
+          <button className="remove" onClick={() => dispatch({ type: 'REMOVE_TODO' })}>
+            Remove
+          </button>          
+        </div>
+        
       </form>
-     
-    );  
-}}
+      <hr />
+    </>
+  )
+}
 
 export default TodoForm;

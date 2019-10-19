@@ -1,11 +1,11 @@
 import React from 'react'
+import './Todo.css'
 
-export default function Todo(props) {    
+export default function Todo({dispatch, item}) {    
         return (
             <div 
-            onClick={props.onClick}
-            className={`item${props.item.completed ? " completed" : ""}`}>
-                {props.item.task}
+            className='item' onClick={() => dispatch({ type: 'TOGGLE_TODO', payload: item })}>
+            {item.isCompleted ? <del>{`${item.item}`}</del> : `${item.item}`}
             </div>
         )    
 }
