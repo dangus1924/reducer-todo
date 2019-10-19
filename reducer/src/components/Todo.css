@@ -12,17 +12,27 @@
   
  
   .item {
-    background-color: #65d7e6;
-    width: 50%;
-    height:33px;
-    text-align: center;
-    margin: 10px auto;
-    padding: .666rem .333rem;
-    cursor: pointer;
-    color: #fff;
-    font-size: 25px;
-    border-radius: 25px;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  height: 35px;
+  padding: 1%;
+  margin: 2% auto;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 1px 3px 5px;
+  text-align: center;
+  color: white;
+  background-color: #5dc7f1;
+  font-weight: 600;
+  cursor: pointer;
 
+  }
+
+  .item:hover {
+    background-color: #16475a;
   }
   
   .item.completed {
@@ -33,14 +43,19 @@
   form {
     margin: 25px;
     display: flex;
+    flex-direction: column;
     justify-content: flex-end;
     align-items: center;
     
   }
 
   hr {
- color: #e66565; 
- border: solid 5px;
+    width: 70%;
+    height: 6px;
+    border: none;
+    border-radius: 10px;
+    background:#ff3366;
+    margin: 2% auto;
   }
   
   form > input {
@@ -66,6 +81,11 @@
     margin: 5px;
   }
 
+  .submit:hover {
+    background-color: #16475a;
+    transform: scale(1.02);
+  }
+
   .remove {
     background-color: #e66565;
     border: none;
@@ -75,6 +95,11 @@
     cursor: pointer;
     border-radius: 25px;
     margin: 5px;
+  }
+
+  .remove:hover {
+    background-color: #fc003f; 
+    transform: scale(1.02);
   }
   
   input::placeholder {
@@ -92,4 +117,12 @@
     background-color: #6d6d82;
     margin-top: 16px;
     font-size: 0.8rem;
+  }
+
+  .listContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
   }

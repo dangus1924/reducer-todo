@@ -8,7 +8,7 @@ function App() {
 
   return (
     <div className="App">
-      <div className='detailsContainer'>
+      <div className='mainContainer'>
         <TodoList todoList={state.todoItems} state={state} dispatch={dispatch} />
       </div>
     </div>

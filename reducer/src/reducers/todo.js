@@ -28,8 +28,7 @@ export const initialState = {
           }
         });
       return {
-        ...state,
-        todoItems: toggleTodo
+        ...state,        todoItems: toggleTodo
       }
       case 'REMOVE_TODO':
       return {
