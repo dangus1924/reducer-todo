@@ -1,8 +1,10 @@
 .header {
   font-weight: 800;
   display: flex;
+  flex-flow: row;
   justify-content: center;
-  font-size: 50px;
+  font-size: 25px;
+  text-decoration: underline;
 }
 
 .App {
@@ -18,3 +20,4 @@
   width: 100%;
   margin: 0 auto;
 }
+
